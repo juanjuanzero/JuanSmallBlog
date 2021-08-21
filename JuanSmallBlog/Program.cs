@@ -3,7 +3,7 @@ using Statiq.App;
 using Statiq.Web;
 using Statiq.Common;
 
-namespace MySite
+namespace JuanSmallBlog
 {
   public class Program
   {
