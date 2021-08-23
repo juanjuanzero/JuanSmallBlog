@@ -1,0 +1,3 @@
+[submodule "JuanSmallBlog/theme"]
+	path = JuanSmallBlog/theme
+	url = https://github.com/juanjuanzero/CleanBlog.git
