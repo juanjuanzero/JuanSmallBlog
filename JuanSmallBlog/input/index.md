@@ -1,6 +1,6 @@
 Title: i am afable
 ---
-# Hello World
+# hello world
 
 My name is Juan and I love to learn.
 
