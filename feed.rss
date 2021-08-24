@@ -5,14 +5,14 @@
 		<link>/</link>
 		<description />
 		<copyright>Copyright © 2021</copyright>
-		<pubDate>Mon, 23 Aug 2021 01:59:49 GMT</pubDate>
-		<lastBuildDate>Mon, 23 Aug 2021 01:59:49 GMT</lastBuildDate>
+		<pubDate>Tue, 24 Aug 2021 00:35:28 GMT</pubDate>
+		<lastBuildDate>Tue, 24 Aug 2021 00:35:28 GMT</lastBuildDate>
 		<item>
 			<title>My First Statiq post</title>
 			<link>/posts/myfirstpost</link>
 			<description>&lt;p&gt;Hello from my first Statiq post on my blog.&lt;/p&gt;</description>
 			<guid isPermaLink="false">/posts/myfirstpost</guid>
-			<pubDate>Mon, 23 Aug 2021 01:58:14 GMT</pubDate>
+			<pubDate>Tue, 24 Aug 2021 00:33:57 GMT</pubDate>
 			<content:encoded>&lt;h1 id="hello-world-this-is-my-first-post"&gt;Hello World this is my first post!&lt;/h1&gt;
 &lt;p&gt;Hello from my first Statiq post on my blog.&lt;/p&gt;
 </content:encoded>
