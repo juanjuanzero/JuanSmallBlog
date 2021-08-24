@@ -2,7 +2,6 @@ Title: Azure Data Studio
 Description: playing around with Azure Data Studio
 Tags:
 - SQL
-- Azure
 - Data
 - AdventureWorks
 ---
