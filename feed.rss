@@ -5,16 +5,28 @@
 		<link>/</link>
 		<description />
 		<copyright>Copyright © 2021</copyright>
-		<pubDate>Tue, 24 Aug 2021 00:35:28 GMT</pubDate>
-		<lastBuildDate>Tue, 24 Aug 2021 00:35:28 GMT</lastBuildDate>
+		<pubDate>Tue, 24 Aug 2021 01:58:34 GMT</pubDate>
+		<lastBuildDate>Tue, 24 Aug 2021 01:58:34 GMT</lastBuildDate>
 		<item>
-			<title>My First Statiq post</title>
-			<link>/posts/myfirstpost</link>
-			<description>&lt;p&gt;Hello from my first Statiq post on my blog.&lt;/p&gt;</description>
-			<guid isPermaLink="false">/posts/myfirstpost</guid>
-			<pubDate>Tue, 24 Aug 2021 00:33:57 GMT</pubDate>
-			<content:encoded>&lt;h1 id="hello-world-this-is-my-first-post"&gt;Hello World this is my first post!&lt;/h1&gt;
-&lt;p&gt;Hello from my first Statiq post on my blog.&lt;/p&gt;
+			<title>Azure Data Studio</title>
+			<link>/posts/whatisazuredatastudio</link>
+			<description>playing around with Azure Data Studio</description>
+			<guid isPermaLink="false">/posts/whatisazuredatastudio</guid>
+			<pubDate>Tue, 24 Aug 2021 01:56:22 GMT</pubDate>
+			<content:encoded>&lt;h2 id="why-would-you-use-azure-data-studio"&gt;Why would you use Azure Data Studio?&lt;/h2&gt;
+&lt;h3 id="why-it-might-be-useful"&gt;Why it might be useful.&lt;/h3&gt;
+&lt;p&gt;Azure Data Studio would be a good option to try if you work in a team, you can write up queries and share them across your team. It has built in Git support, a terminal and native Jupter Notebook.&lt;/p&gt;
+&lt;h1 id="how"&gt;How?&lt;/h1&gt;
+&lt;h3 id="how-do-i-get-it"&gt;How do i get it?&lt;/h3&gt;
+&lt;p&gt;You can download (Azure Data Studio)[https://azure.microsoft.com/en-us/services/developer-tools/data-studio/].&lt;/p&gt;
+&lt;h1 id="what-demo-time"&gt;What? Demo Time.&lt;/h1&gt;
+&lt;h3 id="what-will-we-be-doing"&gt;What will we be doing?&lt;/h3&gt;
+&lt;p&gt;We will use Azure Data Studio to explore and connect to the Adventure Works database. Here is a summary of what we will do:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Set up the Adventure Works Database from a fresh install&lt;/li&gt;
+&lt;li&gt;Execute some queries against the Adventure Works database&lt;/li&gt;
+&lt;li&gt;Commit our queries to git&lt;/li&gt;
+&lt;/ul&gt;
 </content:encoded>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
