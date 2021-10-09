@@ -4,27 +4,19 @@
 	<title />
 	<link rel="self" href="/" />
 	<rights>Copyright © 2021</rights>
-	<updated>2021-08-24T01:58:34Z</updated>
+	<updated>2021-10-09T13:01:16Z</updated>
 	<entry>
 		<id>/posts/whatisazuredatastudio</id>
 		<title>Azure Data Studio</title>
 		<link href="/posts/whatisazuredatastudio" />
-		<updated>2021-08-24T01:56:22Z</updated>
-		<content>&lt;h2 id="why-would-you-use-azure-data-studio"&gt;Why would you use Azure Data Studio?&lt;/h2&gt;
-&lt;h3 id="why-it-might-be-useful"&gt;Why it might be useful.&lt;/h3&gt;
+		<updated>2021-10-09T12:59:31Z</updated>
+		<content>&lt;h3 id="why-it-might-be-useful"&gt;Why it might be useful.&lt;/h3&gt;
 &lt;p&gt;Azure Data Studio would be a good option to try if you work in a team, you can write up queries and share them across your team. It has built in Git support, a terminal and native Jupter Notebook.&lt;/p&gt;
-&lt;h1 id="how"&gt;How?&lt;/h1&gt;
 &lt;h3 id="how-do-i-get-it"&gt;How do i get it?&lt;/h3&gt;
-&lt;p&gt;You can download (Azure Data Studio)[https://azure.microsoft.com/en-us/services/developer-tools/data-studio/].&lt;/p&gt;
-&lt;h1 id="what-demo-time"&gt;What? Demo Time.&lt;/h1&gt;
-&lt;h3 id="what-will-we-be-doing"&gt;What will we be doing?&lt;/h3&gt;
-&lt;p&gt;We will use Azure Data Studio to explore and connect to the Adventure Works database. Here is a summary of what we will do:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Set up the Adventure Works Database from a fresh install&lt;/li&gt;
-&lt;li&gt;Execute some queries against the Adventure Works database&lt;/li&gt;
-&lt;li&gt;Commit our queries to git&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;You can download &lt;a href="https://azure.microsoft.com/en-us/services/developer-tools/data-studio/"&gt;Azure Data Studio&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id="what-is-my-take-on-azure-data-studio"&gt;What is my take on Azure Data Studio?&lt;/h3&gt;
+&lt;p&gt;After trying it out for a few times, I liked the features that it offers when i am focused on analitical tasks. It allows me to write queries in a notebook so that i can explain my queries sussinctly and clearly. This is a major plus. I wish it wasnt named Azure Data Studio though since it presumes that I need Azure to do it. You don't. You just need a database connection.&lt;/p&gt;
 </content>
-		<summary>playing around with Azure Data Studio</summary>
+		<summary>Playing with Azure Data Studio</summary>
 	</entry>
 </feed>
