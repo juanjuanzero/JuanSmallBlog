@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Playing with C&#x2B;&#x2B;">
+
+  <title>i am afable - Learning C&#x2B;&#x2B;</title>
+
+  <link rel="canonical" href="/posts/learningcpp">
+
+      <link type="application/rss+xml" rel="alternate" href="/feed.rss" />
+      <link type="application/atom+xml" rel="alternate" href="/feed.atom" />
+  
+  <meta name="application-name" content="i am afable" />
+  <meta name="msapplication-tooltip" content="i am afable" />
+  <meta name="msapplication-starturl" content="/" />
+
+  <meta property="og:title" content="i am afable - Learning C&#x2B;&#x2B;" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/posts/learningcpp" />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- Bootstrap core CSS -->
+  <link href="/vendor/bootstrap/scss/bootstrap.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="/vendor/fontawesome-free/css/brands.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css' data-no-mirror>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css' data-no-mirror>
+  
+  <!-- Custom styles for this template -->
+  <link href="/scss/clean-blog.css" rel="stylesheet">
+  
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/plugins/autoloader/prism-autoloader.min.js" data-no-mirror></script>
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/themes/prism.css">
+
+  <!-- Lunr search -->
+  
+  
+
+
+  
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">i am afable</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/posts">Posts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/tags">Tags</a>
+            </li>
+</ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- Page Header -->
+  <header class="masthead">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="post-heading">
+          <h1>
+            Learning C&#x2B;&#x2B;
+          </h1>
+            <h2 class="subheading">Playing with C&#x2B;&#x2B;</h2>
+              <div class="meta">Published on Saturday, October 9, 2021</div>
+                <div class="mt-3">
+                      <a href="/tags/getting-started" class="badge badge-light"> Getting Started</a>
+                      <a href="/tags/c" class="badge badge-light"> C&#x2B;&#x2B;</a>
+                </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- Main Content -->
+  <div class="container"> 
+    <div class="row">
+      <div id="content" class="col-md-12">  
+        <h1 id="learning-c">Learning C++</h1>
+<p><a href="https://github.com/juanjuanzero/LearningCpp">The code discussed here is on github</a>.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>Using Visual Studio 2019. Open up the C++ Console Application Template. You will be greeted with a standard HelloWorld application. The main file is the <em>LearningCpp.cpp</em> file. Inside the solution folder.</p>
+<blockquote>
+<p>Using Visual Studio here because I am on a windows machine.
+C++ can be cross platform, when you are developing in a different environment you may want to look at different compilers.</p>
+</blockquote>
+<h2 id="looking-at-the-learningcpp.cpp-file">Looking at the LearningCpp.cpp file.</h2>
+<h3 id="what-is-this-project">What is this project?</h3>
+<p>This project is just a simple console application that asks the user to guess the number <em>42</em>. Its very simple, but setup further learning down the road.</p>
+<h3 id="the-main-method">The <em>main</em> method</h3>
+<p>Program execution begins and ends here.</p>
+<h3 id="what-ive-noticed-so-far">What I've noticed so far</h3>
+<p>If you squint hard enough C++ has a few similarities to C# but with slight differences.</p>
+<h3 id="including-libraries">Including Libraries</h3>
+<p>In this project we used the <code>#include &lt;iostream&gt;</code> to <strong>include</strong> the iostream library or the <a href="https://www.cplusplus.com/reference/iostream/">Standard Input/ Output Streams Libary</a>. In the library, there are the <code>cout</code> and <code>cin</code> objects that we work with in the project to write to (cout) and read from (cin) the console.</p>
+<h4 id="using-the-using-statement">using the <code>using</code> statement</h4>
+<p>Just below the include statement we write the following:</p>
+<pre><code>using std::cout;
+using std::cin;
+</code></pre>
+<p>The two usings are <em>using</em> statements (directives?) so that we don't have to repeat <code>std::</code> namespace reference. Where ever you want interact with the object.</p>
+<h4 id="function-declarations-in-the-header-file">Function Declarations in the Header File</h4>
+<p>Just below the usings statements is another <code>#include &quot;FunctionDec.h&quot;;</code></p>
+<p>C++ has Header files, in this case the <em>FunctionDec.h</em> that you can use to contain function declarations.</p>
+<h5 id="what-is-a-declaration">What is a declaration?</h5>
+<p>There is a pattern in C++, where you declare something before you use it. In our case, here we <strong>declare</strong> the function for the <strong>checkGuess()</strong> method. If we inspect the <em>FunctionDec.h</em> file you see the method signature for the <strong>checkGuess()</strong> method. Which states: <code>bool checkGuess(int guess, int toGuess);</code></p>
+<h5 id="but-where-is-it-defined">But, where is it defined?</h5>
+<p>Ah, so the <strong>checkGuess()</strong> method is defined inside the <em>Functions.cpp</em> file. If you inspect this file it would contain the following code:</p>
+<pre><code>#include &lt;iostream&gt;
+
+bool checkGuess(int guess, int toGuess) {
+    if (guess == toGuess)
+    {
+        std::cout &lt;&lt; &quot;\nWell done!\n&quot;;
+        return false;
+    }
+    else {
+        std::cout &lt;&lt; &quot;\nNope! lol. Keep guessing!\n&quot;;
+        return true;
+    }
+}
+</code></pre>
+<p>Visual Studio compiles the source files <strong>.cpp</strong> for you everytime you run the solution by when you are viewing the solution. Visual Studio uses its own built in compiler. In other environments you would need to compile both <em>LearningCpp.cpp</em> and <em>Functions.cpp</em>. Something like the command <code>clang LearningCpp.cpp Functions.cpp</code> if you are using the clang compiler. You don't have to worry about the Header file.</p>
+<h4 id="buidling-compiler-errors-and-linker-errors">Buidling, Compiler Errors and Linker Errors</h4>
+<p>When you are building your project you might get compiler errors. For windows atleast those will have error codes that begin with the letter <em>C</em> to tell you have the compiler has found an error. Then you can also have Linker errors, those error codes will be prefixed with <strong>LNK</strong>. Linker errors are different than compiler errors. When you compile (or build) your code, the compiler will generate the appropriate <em>.obj</em> files from the <em>.cpp</em> files. Then theres a step to <strong>link</strong> them all together to create the <em>.exe</em> file which is then what we use to &quot;run&quot; the program.</p>
+<h2 id="adding-vector-algorithm-working-with-collections">Adding Vector &amp; Algorithm | Working with Collections</h2>
+<p>We went ahead and added the following lines of code to the just below the reference to the IO stream library.</p>
+<pre><code>#include &lt;vector&gt;
+using std::vector;
+
+#include &lt;algorithm&gt;
+using std::sort;
+using std::begin;
+using std::end;
+</code></pre>
+<h3 id="the-collection-vector-libary">The Collection | Vector Libary</h3>
+<p>Here we have added the <code>vector</code> library. A <a href="https://en.cppreference.com/w/cpp/container/vector">vector</a> represents a collection of objects that are of the same type. Just above the while loop in the <em>LearningCpp.cpp</em> file we see the following code: <code>vector&lt;int&gt; tries;</code> which initializes a collection of type <strong>int</strong> called <strong>tries</strong>. This is an object.</p>
+<p>Then we use the <strong>tries</strong> object to act as a container for all of the failed tries that the user does. If the user needs to keep guessing (keepGuessing == true) then we add the failed guess to the <strong>tries</strong>. This addition is done by the <strong>push_back()</strong> method on the vector object. This is implemented like so inside the while loop:</p>
+<pre><code>if (keepGuessing) 
+{
+    tries.push_back(userGuess);
+}
+</code></pre>
+<h3 id="working-with-vectors-the-algorithm-library">Working with Vectors | The Algorithm Library</h3>
+<p>We've also added the algorithm library. The algorithm library allows us to work with collections <strong>(not just vectors)</strong> in C++. These are available as functions in the library.</p>
+<p>At the top, you see the usin statements for <strong>sort, begin, and end</strong> methods. We use these to identify the beginning (begin()), the end (end()) of the vector and sort the vector.</p>
+<blockquote>
+<p>The begin and end methods were needed so that we sort the entire vector and not just a slice of it.</p>
+</blockquote>
+<p>Then we write them out to the console using a for loop. This is implemented in the code like so:</p>
+<pre><code>cout &lt;&lt; &quot;\nHere are were your failed attempts order by value:\n&quot;;
+    sort(begin(tries), end(tries)); //sorting
+
+    for (auto item : tries) {
+        cout &lt;&lt; item &lt;&lt; &quot; &quot;;
+    }
+</code></pre>
+
+
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Footer -->  
+  <footer>
+    <div class="container">
+        <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="copyright text-muted m-0">Copyright &#xA9; 2021</p>
+                    <br />
+                    <ul class="list-inline text-center small">
+                            <li class="list-inline-item">
+                                <a href="/feed.rss"><i class="fa fa-rss"></i> RSS Feed</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="/feed.atom"><i class="fa fa-rss"></i> Atom Feed</a>
+                            </li>
+                    </ul>
+                    <br />
+                    <div class="font-weight-bold small"><a href="https://statiq.dev">Generated by Statiq</a></div>
+                </div>
+        </div>
+    </div>
+</footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  
+
+
+  
+
+  <!-- Custom scripts for this template -->
+  <script src="/js/clean-blog.js"></script>
+
+</body>
+
+</html>
