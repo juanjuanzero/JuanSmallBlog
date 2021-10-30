@@ -5,14 +5,14 @@
 		<link>/</link>
 		<description />
 		<copyright>Copyright © 2021</copyright>
-		<pubDate>Sat, 09 Oct 2021 13:26:42 GMT</pubDate>
-		<lastBuildDate>Sat, 09 Oct 2021 13:26:42 GMT</lastBuildDate>
+		<pubDate>Sat, 30 Oct 2021 15:56:53 GMT</pubDate>
+		<lastBuildDate>Sat, 30 Oct 2021 15:56:53 GMT</lastBuildDate>
 		<item>
 			<title>Azure Data Studio</title>
 			<link>/posts/whatisazuredatastudio</link>
 			<description>Playing with Azure Data Studio</description>
 			<guid isPermaLink="false">/posts/whatisazuredatastudio</guid>
-			<pubDate>Sat, 09 Oct 2021 13:25:25 GMT</pubDate>
+			<pubDate>Sat, 30 Oct 2021 15:55:34 GMT</pubDate>
 			<content:encoded>&lt;h3 id="why-it-might-be-useful"&gt;Why it might be useful.&lt;/h3&gt;
 &lt;p&gt;Azure Data Studio would be a good option to try if you work in a team, you can write up queries and share them across your team. It has built in Git support, a terminal and native Jupter Notebook.&lt;/p&gt;
 &lt;h3 id="how-do-i-get-it"&gt;How do i get it?&lt;/h3&gt;
@@ -23,11 +23,792 @@
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
 		<item>
+			<title>Learning Django</title>
+			<link>/posts/learningdjango</link>
+			<description>Learning Django - Creating a Meeting Planner App</description>
+			<guid isPermaLink="false">/posts/learningdjango</guid>
+			<pubDate>Sat, 30 Oct 2021 15:55:34 GMT</pubDate>
+			<content:encoded>&lt;h1 id="learning-django"&gt;Learning Django&lt;/h1&gt;
+&lt;p&gt;Here are the things that I've learned building up a simple Django project. The finished project code is on my &lt;a href="https://github.com/juanjuanzero/Learning_Django"&gt;github&lt;/a&gt;. Happy coding!&lt;/p&gt;
+&lt;h2 id="getting-setup"&gt;Getting Setup&lt;/h2&gt;
+&lt;p&gt;Downloading Pycharm community edition i was able to get up and running pretty fast. Creating a project was easy.&lt;/p&gt;
+&lt;h3 id="window-into-my-world"&gt;Window into my world.&lt;/h3&gt;
+&lt;p&gt;I was using a Windows machine to get this going. Once i started a project in pycharm, the default terminal that I got was PowerShell. When i am running the commands to activate the virtual environment PowerShell would not show that I had the environment working.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;C:&amp;gt; venv\Scripts\activate.bat&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Therefore, i had to change the settings to use the cmd.exe as my default terminal. Pycharm already activates the environment for you. It's nice but all you need to do is to run that &lt;em&gt;activate.bat&lt;/em&gt; file to start up your virtual env.&lt;/p&gt;
+&lt;h2 id="getting-started"&gt;Getting Started&lt;/h2&gt;
+&lt;p&gt;Once you have your virtual env setup, you can now get started by installing the necessary dependencies for your project. Run the following to install Django into your project.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;C:&amp;gt; &amp;lt;inside your virtual env&amp;gt; python -m pip install django&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Here were we are running the python command the -m is the mod flag which calls the &lt;strong&gt;pip&lt;/strong&gt; module to call the &lt;strong&gt;install&lt;/strong&gt; command to install &lt;strong&gt;django&lt;/strong&gt;. Since this was called inside our active virtual environment this installs django within that.&lt;/p&gt;
+&lt;h2 id="creating-the-django-project"&gt;Creating the Django Project&lt;/h2&gt;
+&lt;p&gt;I am following a course put on by Reindert-Jan Ekker on Pluralsight and the project is essentially creating a basic meeting planner application.&lt;/p&gt;
+&lt;p&gt;After installing Django into our env we can get started creating our project. Execute the following command in your virtual env:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-commandline"&gt;C:&amp;gt; &amp;lt;inside your virtual env&amp;gt; django-admin startproject meeting_planner
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This creates a meeting-planner folder inside your project folder. &lt;code&gt;django-admin&lt;/code&gt; is for administrative tasks that is available to you as a command-line utility. For more information please &lt;a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/"&gt;review the docs&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This creates a &lt;strong&gt;meeting-planner&lt;/strong&gt; folder inside your project directory.&lt;/p&gt;
+&lt;h3 id="manage.py"&gt;Manage.py&lt;/h3&gt;
+&lt;p&gt;Inside the meeting-planner folder you can see that there is a &lt;strong&gt;manage.py&lt;/strong&gt; file. This has a similar functionality to django-admin but it also sets the DJANGO_SETTINGS_MODULE env variable to point to the project's &lt;strong&gt;settings.py&lt;/strong&gt; file. The file &lt;strong&gt;manage.py&lt;/strong&gt; is saved in the folder that django created when we called &lt;em&gt;startproject&lt;/em&gt;.&lt;/p&gt;
+&lt;h3 id="starting-the-project"&gt;Starting the Project&lt;/h3&gt;
+&lt;p&gt;Once you called the &lt;em&gt;startproject&lt;/em&gt; django created a folder for you with that project name. In this guide it was called &lt;em&gt;meeting-planner&lt;/em&gt; we can nagvigate to where that manage.py file and pass in the &lt;em&gt;runserver&lt;/em&gt; command&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-commandline"&gt;C:&amp;gt; &amp;lt;venv&amp;gt; &amp;lt;your project root&amp;gt;cd meeting-planner
+C:&amp;gt; &amp;lt;venv&amp;gt; &amp;lt;your project root&amp;gt;\meeting-planner python manage.py runserver
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will fire up the development server using the settings defined in the &lt;em&gt;settings.py&lt;/em&gt; file inside &lt;code&gt;&amp;lt;root&amp;gt;\meeting-planner\meeeting-planner&lt;/code&gt; folder. The server will be available at &lt;code&gt;http://127.0.0.1:8000/&lt;/code&gt;. You will see that a db.sqlite3 file has been added to the parent meeting-planner folder. This is a result of running the server. You'll notice that there are there was another folder name similarly to the project name (meeting-planner). The child folder is the package that pretty much contains the web-app. The two files that we'll be working with throughout is &lt;em&gt;settings.py&lt;/em&gt; and &lt;em&gt;urls.py&lt;/em&gt;.&lt;/p&gt;
+&lt;h3 id="that-one-security-warning"&gt;That one security warning&lt;/h3&gt;
+&lt;p&gt;If you navigate to the settings.py file you can see that there is a SECRET_KEY variable storing a strange string of characters. Please be careful not to share any passwords or secrets out in the internet!&lt;/p&gt;
+&lt;h2 id="creating-a-simple-web-page"&gt;Creating a Simple Web Page&lt;/h2&gt;
+&lt;p&gt;Here is a summary that we'll do next:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create a Django app&lt;/li&gt;
+&lt;li&gt;Add a view function&lt;/li&gt;
+&lt;li&gt;Assign a URL to the view function&lt;/li&gt;
+&lt;li&gt;Run and view the page&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Question:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How does Django serve the page?&lt;/li&gt;
+&lt;li&gt;What are some problems and pitfalls to know?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="creating-a-django-app"&gt;Creating a Django App&lt;/h3&gt;
+&lt;p&gt;The pattern here is to group things via &lt;em&gt;apps&lt;/em&gt;. &lt;em&gt;Apps&lt;/em&gt; are a concept in Django that groups functionality. Here we are going to create an app that represents the website (or frontend).&lt;/p&gt;
+&lt;p&gt;We'll run the following code on our Django Project (meeting-planner):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;python manage.py startapp website&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This will add a &lt;em&gt;website&lt;/em&gt; folder inside the meeting-planner project (the parent, from now on will be called the project folder). Inside this folder you see a few py files. For this guide, well just focus on the &lt;em&gt;views.py&lt;/em&gt; file. Everything else can be deleted.&lt;/p&gt;
+&lt;p&gt;The views.py (meeting-planner/website/views.py) file is where we will create our views for this project. But before we have to configure the settings so that Django knows about it in &lt;em&gt;settings.py's&lt;/em&gt; INSTALLED_APPS setting. We'll add the app name to the INSTALLED_APPS list. It should look like so:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'website',
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id="adding-the-view"&gt;Adding the view&lt;/h3&gt;
+&lt;p&gt;A view is a django component that responds to requests for a webpage. In views.py we'll create welcome function that just returns an HttpResponse with some text like so:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;from django.http import HttpResponse
+
+# Create your views here.
+def welcome(request):
+    return HttpResponse(&amp;quot;Hello there! Welcome to the Meeting Planner&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here we are importing the HttpResponse class from django so that it can be used.&lt;/p&gt;
+&lt;h3 id="adding-the-url"&gt;Adding the url&lt;/h3&gt;
+&lt;p&gt;So there has to be a way we get to the view, we'll need to configure the &lt;em&gt;urls.py&lt;/em&gt; so that the resource we created (the welcome function in &lt;em&gt;veiws.py&lt;/em&gt;) can be visited. We'll go into the &lt;em&gt;urls.py&lt;/em&gt; file and add a path in the urlpatterns array. The code should look like so:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;from django.contrib import admin
+from django.urls import path
+
+from website.views import welcome
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('welcome.html', welcome)
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You see that we are importing the &lt;em&gt;welcome&lt;/em&gt; function that is in &lt;em&gt;website/views.py&lt;/em&gt;. The path method takes in a string function for the pattern and the welcome method.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you get red lines with a reference warning beneath welcome this likely means that pycharm doesn't know which is your root project. You can right-click on the meeting-planner project folder (not the app) and mark it as Source root.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;If you run the server using the &lt;code&gt;python manage.py runserver&lt;/code&gt; you can navigate to the &lt;code&gt;http://127.0.0.1:8000/welcome.html&lt;/code&gt; and you should be greeted with a page with the text you outlined in the HttpResponse method that is returned by the welcome method. You actually got an error because there wasn't a resource in &lt;code&gt;http://127.0.0.1:8000&lt;/code&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When a web server is running. All it's doing is waiting for requests.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We'll add two other endpoints, a date and an about page by following the steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Go to the &lt;em&gt;views.py&lt;/em&gt; and add functions that take in a &lt;em&gt;request&lt;/em&gt; and return an HttpResponse&lt;/li&gt;
+&lt;li&gt;Go an update &lt;em&gt;urls.py&lt;/em&gt; to add url mappings (and import the view functions).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;We'll also go ahead and change the mapping for the welcome page to an empty string '' so that requests to &lt;code&gt;http://127.0.0.1:8000&lt;/code&gt; will lead there.&lt;/p&gt;
+&lt;p&gt;views.py&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;from django.shortcuts import render
+from datetime import datetime
+from django.http import HttpResponse
+
+# Create your views here.
+def welcome(request):
+    return HttpResponse(&amp;quot;Hello there! Welcome to the Meeting Planner&amp;quot;)
+
+def date(request):
+    return HttpResponse(&amp;quot;This page was served at &amp;quot; + datetime.now)
+
+def about(request):
+    return HttpResponse(&amp;quot;Hello, world. I am Juan&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;urls.py&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;from django.contrib import admin
+from django.urls import path
+
+from website.views import welcome, datetime, about
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', welcome),
+    path('date', date),
+    path('about', about)
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="setting-up-a-data-model"&gt;Setting up a Data Model&lt;/h2&gt;
+&lt;p&gt;Models and Migrations are core concepts to think about when dealing with the data model in Django.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Models&lt;/strong&gt; are python classes that maps to a database table. Each instance is an Entity.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Migrations&lt;/strong&gt; are an automated way to keep the structure of the db up to date with the model classes. It's not always automatic, as you'll need to write your own migrations if your project gets more complex.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So when you run the server in django you may have been getting a message like the following:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;By default Django includes a slqlite3 db as part of your project, and the 18 migrations it is referring to are migrations for the default apps that come installed in Django. These apps are also listed in the INSTALLED_APPS array under &lt;em&gt;settings.py&lt;/em&gt;. Its essentially saying:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;Hey your data model may not match what is in the db because there are unapplied migrations here&amp;quot;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We'll run the &lt;code&gt;python manage.py showmigrations&lt;/code&gt; command to see our migrations. It will list out the migrations that have been created for each app that came with Django as default. Next we'll run &lt;code&gt;python manage.py migrate&lt;/code&gt; to run all the currently pending migrations.&lt;/p&gt;
+&lt;h3 id="creating-a-model-class"&gt;Creating a Model Class&lt;/h3&gt;
+&lt;p&gt;We now that we have our bearings, well go ahead and add another app into our project to contains all the meeting data for the meeting planner.&lt;/p&gt;
+&lt;p&gt;We'll run the &lt;code&gt;python manage.py startapp meetings&lt;/code&gt; to create the meetings app.&lt;/p&gt;
+&lt;p&gt;Once executed it will generate another app in your project. We'll create the models that this app will interact with in &lt;em&gt;models.py&lt;/em&gt;. Don't forget to add it to &lt;em&gt;settings.py&lt;/em&gt;!&lt;/p&gt;
+&lt;p&gt;In &lt;em&gt;models.py&lt;/em&gt; we'll add a class called Meeting. The Meeting class will need to inherit from the Model class from Django so that it can be represented into the database. We'll also add a title and a date property. Both properties are defined by the methods called on the models module.&lt;/p&gt;
+&lt;p&gt;models.py&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;from django.db import models
+
+# Create your models here.
+class Meeting(models.Model):
+    title = models.CharField(max_length=200)
+    date = models.DateField()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Django will create the &lt;strong&gt;init&lt;/strong&gt; method for us in this Meeting class.&lt;/p&gt;
+&lt;p&gt;Next we'll need to create a migration so that the django can create the table for the Meeting entities.&lt;/p&gt;
+&lt;p&gt;In the commandline:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-commandline"&gt;python manage.py makemigrations
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The migration will find the meeting class and realize that its not in the sqllite db. A new file is added to the migrations folder of the meetings app folder. (If you don't see it right-click and select 'Reload from Disk').&lt;/p&gt;
+&lt;p&gt;The output of this is the &lt;em&gt;0001_initial.py&lt;/em&gt; file. If you inspect it there is a migration code that describes the creation of the Meetings table with the &lt;em&gt;title&lt;/em&gt; and &lt;em&gt;date&lt;/em&gt; fields in the database. There is also an id field that is created as the primary key of for each record in the db.&lt;/p&gt;
+&lt;h3 id="migrating-our-first-migration"&gt;Migrating our first migration&lt;/h3&gt;
+&lt;p&gt;Next we'll go into creating a migration using the &lt;code&gt;sqlmigrate &amp;lt;app&amp;gt; &amp;lt;migration_name&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;In the commandline:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-commandline"&gt;python manage.py sqlmigrate meetings 0001
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This generates the sql needed to be executed against the db.&lt;/p&gt;
+&lt;p&gt;In order to run this migration against the db, we go back to the commandline and enter:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-commandline"&gt;python manage.py migrate
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This runs all the &lt;em&gt;currently waiting&lt;/em&gt; migrations from all the INSTALLED_APPS in &lt;em&gt;settings.py&lt;/em&gt;.&lt;/p&gt;
+&lt;h3 id="reviewing-the-admin-user-interface"&gt;Reviewing the Admin User Interface&lt;/h3&gt;
+&lt;p&gt;With Django you get an admin interface that allows you to perform CRUD operations against your models in your project. For the app that we just created, we need to change the &lt;em&gt;admin.py&lt;/em&gt; file inside the meetings app folder.&lt;/p&gt;
+&lt;p&gt;meetings/admin.py&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;from django.contrib import admin
+from .models import Meeting
+
+admin.site.register(Meeting)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We are importing the Meeting class into the admin.py and pass it into the admin.site.register method to get it setup for the admin screens. Once setup you  can add/edit/delete Meetings through the admin screen.&lt;/p&gt;
+&lt;p&gt;But you first need to log in as the admin. To do this you will need to create an admin account.&lt;/p&gt;
+&lt;p&gt;In the commandline:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-commandline"&gt;python manage.py createsuperuser
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You will then be able to create a superuser account. Once you are ready, run the server, navigate to the &lt;code&gt;http://127.0.0.1:8000/admin&lt;/code&gt; page, and log in.&lt;/p&gt;
+&lt;p&gt;Once logged in add a few Meetings.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;THIS IS NOT YOUR SITE. THIS IS FOR ADMINS ONLY NOT USERS.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="migration-workflow"&gt;Migration Workflow&lt;/h3&gt;
+&lt;p&gt;Here is the workflow for future changes and when working with migrations.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Make sure the app is in INSTALLED_APPS&lt;/li&gt;
+&lt;li&gt;change the model code&lt;/li&gt;
+&lt;li&gt;Generate the migration script &lt;code&gt;python manage.py makemigrations&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Review the migration script (VERY IMPORTANT)&lt;/li&gt;
+&lt;li&gt;Review other migrations by : &lt;code&gt;python manage.py showmigrations&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run the pending migrations by : &lt;code&gt;python manage.py migrate&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="adding-more-fields-to-meetings"&gt;Adding more fields to Meetings&lt;/h3&gt;
+&lt;p&gt;After reviewing the workflow we'll add two new fields to the Meetings model: &lt;em&gt;start time&lt;/em&gt; and &lt;em&gt;duration&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Here's a look at &lt;em&gt;meetings\models.py&lt;/em&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;from django.db import models
+from datetime import time
+# Create your models here.
+class Meeting(models.Model):
+    title = models.CharField(max_length=200)
+    date = models.DateField()
+    start_time = models.TimeField(default=time(9))
+    duration = models.IntegerField(default=1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;There are default parameters passed to define default values. If you were to migrate these changes without default values django will ask you for default values you can define at the time of migration.&lt;/p&gt;
+&lt;p&gt;Running through the workflow:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;meetings app is already in INSTALLED_APPS&lt;/li&gt;
+&lt;li&gt;the model code has been changed&lt;/li&gt;
+&lt;li&gt;make the migrations, this created &lt;em&gt;meetings/migrations/0002_auto_20211017.py&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Reviewing looks like its adding the appropriate fields.&lt;/li&gt;
+&lt;li&gt;No other migrations are happening&lt;/li&gt;
+&lt;li&gt;Applying the migration.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="other-changes-to-models"&gt;Other changes to models.&lt;/h3&gt;
+&lt;p&gt;If you change the model's behavior by adding a method to it. Django will not detect any migrations (because there are any changes to make in the db).&lt;/p&gt;
+&lt;p&gt;Modifying &lt;em&gt;meetings\models.py&lt;/em&gt; to this does not create any new migrations&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;from django.db import models
+from datetime import time
+# Create your models here.
+class Meeting(models.Model):
+    title = models.CharField(max_length=200)
+    date = models.DateField()
+    start_time = models.TimeField(default=time(9))
+    duration = models.IntegerField(default=1)
+
+    def __str__(self):
+        return f&amp;quot;{self.title} as {self.start_time} on {self.date}&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id="adding-another-model-class"&gt;Adding Another Model Class&lt;/h3&gt;
+&lt;p&gt;We'll add a Room class inside the meetings app. The rooms will have a name, room # and what floor it is on. In &lt;em&gt;meetings\models.py&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;We add the Room class:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;class Room(models.Model):
+    name = models.CharField(max_length=50)
+    floor = models.IntegerField()
+    room_number = models.IntegerField()
+
+    def __str__(self):
+        return f&amp;quot;{self.name} | Room {self.room_number} on {self.floor}&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We'll add a migration to so that the Room table can be added to the db.&lt;/p&gt;
+&lt;p&gt;We also want to reference a particular room in a meeting, We change the Meeting class to the following:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;class Meeting(models.Model):
+    title = models.CharField(max_length=200)
+    date = models.DateField()
+    start_time = models.TimeField(default=time(9))
+    duration = models.IntegerField(default=1)
+    room = models.ForeignKey(Room, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f&amp;quot;{self.title} as {self.start_time} on {self.date}&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The room property in the Meeting class will hold the room that the meeting will be held in. It's a ForeignKey to the Room a room object.&lt;/p&gt;
+&lt;p&gt;There is an on_delete property here that tells django that if the room was deleted, that delete action will CASCADE into all meetings that reference it. It's basically saying:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;Hey if i delete the room, then all the meetings that reference that room via this foreign key should also be deleted&amp;quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="a-new-db"&gt;A new db...&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You can only do this at the start of a project.
+Create a migration for the room property on the Meeting class, when you migrate the migrations the django will ask you for default values in the Meeting class... if you dont want to do this, there is another way.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;You can delete all the migration scrips in the meetings app folder and delete the slqlite db, then just start off from a fresh migration.&lt;/p&gt;
+&lt;p&gt;You'll need to create the superuser again.&lt;/p&gt;
+&lt;h2 id="the-model-template-view-pattern"&gt;The Model, Template, View Pattern&lt;/h2&gt;
+&lt;p&gt;This is also known as MVC. The components are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Models&lt;/li&gt;
+&lt;li&gt;Templates&lt;/li&gt;
+&lt;li&gt;View&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;First we'll change our welcome page...&lt;/p&gt;
+&lt;h3 id="convention-for-where-templates-fall"&gt;Convention for where templates fall.&lt;/h3&gt;
+&lt;p&gt;We need to create own templates inside the app. For the website app folder, we'll add a templates folder to hold the templates for this app. Then we'll add another folder called website to prevent name clashes with other apps.&lt;/p&gt;
+&lt;h3 id="changing-the-welcome-page"&gt;Changing the Welcome Page&lt;/h3&gt;
+&lt;p&gt;In our website\templates\website folder, we'll go ahead and add a html page and call it welcome.&lt;/p&gt;
+&lt;p&gt;We add the following this welcome page looks like:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;
+    &amp;lt;title&amp;gt;Learning Django&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;h1&amp;gt;Hello, world!&amp;lt;/h1&amp;gt;
+&amp;lt;p&amp;gt;This is my first Django app. This is on github at &amp;lt;a href=&amp;quot;https://github.com/juanjuanzero/Learning_Django&amp;quot;&amp;gt;my repo&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next we update the welcome view function inside &lt;em&gt;views.py&lt;/em&gt; of the website app folder. The welcome function is updated to:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;def welcome(request):
+    return render(request,&amp;quot;website/welcome.html&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This returns a render function that is imported by default in views.py. It takes in the request and the path to the html document. The render method here looks for a folder called &lt;em&gt;templates&lt;/em&gt; exactly.&lt;/p&gt;
+&lt;h3 id="adding-template-variables"&gt;Adding Template variables&lt;/h3&gt;
+&lt;p&gt;So now that we've seen that we can point to web pages (static sites) within the templates folder, the real power of this is passing in &lt;strong&gt;template variables&lt;/strong&gt;. We'll make a few changes to the &lt;em&gt;welcome.html&lt;/em&gt; and &lt;em&gt;welcome view function&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Updated welcome.html&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;
+    &amp;lt;title&amp;gt;Learning Django&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;h1&amp;gt;Hello, world!&amp;lt;/h1&amp;gt;
+&amp;lt;p&amp;gt;This is my first Django app. This is on github at &amp;lt;a href=&amp;quot;https://github.com/juanjuanzero/Learning_Django&amp;quot;&amp;gt;my repo&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;span&amp;gt;{{message}}&amp;lt;/span&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;updated welcome view function&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;def welcome(request):
+    return render(request,&amp;quot;website/welcome.html&amp;quot;, {&amp;quot;message&amp;quot;: &amp;quot;hello world, this is a message from the view function!&amp;quot;})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When you run your server, you should see the &lt;code&gt;hello world, this is a message from the view function!&lt;/code&gt; in the welcome page. It's not hard coded in the welcome page its being passed in as part of the render function that is returned from the view function.&lt;/p&gt;
+&lt;p&gt;Btw, the passed in variable is called the &lt;strong&gt;&lt;em&gt;context&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;So you can see where this is going... you have a database, you have a way to show data, the next step is to just create a way to make changes to the data...&lt;/p&gt;
+&lt;h3 id="creating-the-detail-page"&gt;Creating the Detail Page&lt;/h3&gt;
+&lt;p&gt;So next we need to create a detail page, this will show the details of any meetings that we have. In the meetings app we'll add a view function called detail.&lt;/p&gt;
+&lt;p&gt;First we'll create the templates\meeetings folder. Then add the detail page. Here is a look at the detail page:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;
+    &amp;lt;title&amp;gt;Meeting: {{meeting.title}}&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;h1&amp;gt;{{meeting.title}}&amp;lt;/h1&amp;gt;
+&amp;lt;p&amp;gt;
+    This meeting has been scheduled on {{meeting.date}}, at {{meeting.start_time}} in {{meeting.room}}
+&amp;lt;/p&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;See how the properties of a meeting are accessed by the dot? Pretty cool!&lt;/p&gt;
+&lt;p&gt;meetigs\views.py&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;from django.shortcuts import render
+from .models import Meeting
+
+# Create your views here.
+def detail(request, id):
+    meeting = Meeting.objects.get(pk=id)
+    return render(request,&amp;quot;meetings/detail.html&amp;quot;, {&amp;quot;meeting&amp;quot;: meeting})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the detail view function it accesses the objects collection in the Meeting objects and executes the get method to get the meeting with the matching id. Then that is passed into the render method to the detail page.&lt;/p&gt;
+&lt;p&gt;Next we update the url for the page in the meeting_planner app so that we can get to the detail page. This one will be a bit different since we'll want to have the ID to navigate to a meeting. Here is a look at the urlpatterns list in &lt;em&gt;urls.py&lt;/em&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', welcome),
+    path('date', date),
+    path('about', about),
+    path('meetings/&amp;lt;int:id&amp;gt;', detail)
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id="what-if-there-are-invalid-ids"&gt;What if there are invalid ids?&lt;/h4&gt;
+&lt;p&gt;As you can see in the code for the detail view there's no way we handle invalid ids. Thankfully the django offers a good way to handle situations like this, we'll update the detail method to say the following&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;from django.shortcuts import render, get_object_or_404
+
+#.... other code
+
+def detail(request, id):
+    meeting = get_object_or_404(Meeting, pk=id)
+    return render(request,&amp;quot;meetings/detail.html&amp;quot;, {&amp;quot;meeting&amp;quot;: meeting})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is a built-in function that will return a 404 when a meeting id is no longer there.&lt;/p&gt;
+&lt;h2 id="building-urls-listing-items"&gt;Building Urls, Listing Items&lt;/h2&gt;
+&lt;p&gt;So now we have urls that we can navigate to but it would be nice to list them all. Django offers a way to iterate through a collection. We'll update the welcome screen to list out the meetings.&lt;/p&gt;
+&lt;p&gt;website\templates\website\welcome.html&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;
+    &amp;lt;title&amp;gt;Learning Django&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;h1&amp;gt;Hello, world!&amp;lt;/h1&amp;gt;
+&amp;lt;p&amp;gt;This is my first Django app. This is on github at &amp;lt;a href=&amp;quot;https://github.com/juanjuanzero/Learning_Django&amp;quot;&amp;gt;my repo&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;ul&amp;gt;
+    {% for meeting in meetings%}
+    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;/meetings/{{meeting.id}}&amp;quot;&amp;gt;{{meeting.title}}&amp;lt;/a&amp;gt; on {{meeting.date}} {{meeting.start_time}} at {{meeting.room.name}}&amp;lt;/li&amp;gt;
+    {%endfor%}
+&amp;lt;/ul&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;There is a &lt;code&gt;{% for meeting in meetings%} ... {%endfor%}&lt;/code&gt; block of code here that will iterate through the meetings collection and render it on the page.&lt;/p&gt;
+&lt;p&gt;we'll also update the views.py of the website app for the welcome view function.&lt;/p&gt;
+&lt;p&gt;website\views.py&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;def welcome(request):
+    mtgs = Meeting.objects.all()
+    return render(request,&amp;quot;website/welcome.html&amp;quot;, {&amp;quot;meetings&amp;quot;: mtgs})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id="there-is-an-anti-pattern-here-enter-named-urls"&gt;There is an anti-pattern here, enter Named Urls&lt;/h3&gt;
+&lt;p&gt;You see how we hard coded the href tag in the welcome.html file? What if we needed to update the link to something else... and we had 100 pages that referenced that link? That would be bad. Thankfully, Django has Named Urls that we can use so that we'd only have to change it in one place.&lt;/p&gt;
+&lt;p&gt;We'll update the urls.py for the meeting detail page to pass in a name in the path method.&lt;/p&gt;
+&lt;p&gt;urls.py's urlpatterns&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', welcome),
+    path('date', date),
+    path('about', about),
+    path('meetings/&amp;lt;int:id&amp;gt;', detail, name='detail')
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next we'll reference that in our welcome.html inside the href of the link:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;ul&amp;gt;
+    {% for meeting in meetings%}
+    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{% url 'detail' meeting.id %}&amp;quot;&amp;gt;{{meeting.title}}&amp;lt;/a&amp;gt; on {{meeting.date}} {{meeting.start_time}} at {{meeting.room.name}}&amp;lt;/li&amp;gt;
+    {%endfor%}
+&amp;lt;/ul&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Inside the href you see &lt;code&gt;{% url 'detail' meeting.id %}&lt;/code&gt; this is a block that references an url with the name 'detail' and a parameter meeting.id is passed into the path. This is called a Named Url&lt;/p&gt;
+&lt;p&gt;I'll go ahead and add another page for good practice. I added the all rooms page. This has been added to the meetings app.&lt;/p&gt;
+&lt;p&gt;allRooms.html&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;
+    &amp;lt;title&amp;gt;Learning Django&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;h1&amp;gt;All Rooms&amp;lt;/h1&amp;gt;
+&amp;lt;a href=&amp;quot;{% url 'home' %}&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt;
+&amp;lt;ul&amp;gt;
+    {% for room in rooms %}
+    &amp;lt;li&amp;gt;{{room.name}} | #{{room.room_number}} on {{room.floor}}&amp;lt;/li&amp;gt;
+    {% endfor %}
+&amp;lt;/ul&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;urls.py's urlpatterns list&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', welcome, name='home'),
+    path('date', date),
+    path('about', about),
+    path('meetings/&amp;lt;int:id&amp;gt;', detail, name='detail'),
+    path('meetings/allRooms', allRooms, name='all_rooms')
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Also added a view function in the meetings app.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;def allRooms(request):
+    rms = Room.objects.all()
+    return render(request, &amp;quot;meetings/allRooms.html&amp;quot;, {&amp;quot;rooms&amp;quot;: rms})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id="theres-another-pattern-emerging-here"&gt;There's another pattern emerging here.&lt;/h3&gt;
+&lt;p&gt;When the application gets to be too large, it might be a better idea to have the urls scoped to the apps that way the project's urls.py's urlpatterns list won't be so large.&lt;/p&gt;
+&lt;p&gt;Django offers another way to keep things better organized. You can actually have a urls.py in your meetings app and then just reference them in the project's urls.py.&lt;/p&gt;
+&lt;p&gt;Here a look at the meetings\urls.py. Notice how it does not include the meetings\ prefix.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;from django.urls import path
+
+from meetings.views import detail, allRooms
+
+urlpatterns = [
+    path('&amp;lt;int:id&amp;gt;', detail, name='detail'),
+    path('allRooms', allRooms, name='all_rooms')
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the project urls.py, we'll use the include method to reference the urls in the meetings.py. Here is the new project urls.py&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;from django.contrib import admin
+from django.urls import path, include
+
+from website.views import welcome, date, about
+from meetings.views import detail, allRooms
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', welcome, name='home'),
+    path('date', date),
+    path('about', about),
+    path('meetings/', include('meetings.urls'))
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So here, the last item on the list adds the meetings prefix to the urlpatterns list outlined in the meetings/urls.py file. So then we can keep all of our urls related to meetings in the same file.&lt;/p&gt;
+&lt;h2 id="stylin-all-over-the-place"&gt;Stylin' all over the place&lt;/h2&gt;
+&lt;p&gt;Django has a feature called &lt;strong&gt;&lt;em&gt;Template Inheritance&lt;/em&gt;&lt;/strong&gt; to apply the styles across your pages, so you only have to define your styling once.&lt;/p&gt;
+&lt;p&gt;We'll create a static file that will contain some of the styling for our page. We'll put this in the static folder of the website app.&lt;/p&gt;
+&lt;p&gt;website\static\website\first_style.css&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;body {
+    font-family: sans-serif;
+    color: cornflowerblue;
+    background-color: floralwhite;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We'll create a base.html file that our website app will contain. We'll put this inside the templates folder of the app.&lt;/p&gt;
+&lt;p&gt;website\templates\base.html&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;{% load static %}
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;
+    &amp;lt;title&amp;gt;{% block title %}{% endblock %}&amp;lt;/title&amp;gt;
+    &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;{% static 'website/first_style.css' %}&amp;quot;&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+{% block content %}
+{% endblock %}
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;At the top you see the &lt;code&gt;{%load static%}&lt;/code&gt; call and the link tag inside the head tag there uses the django templating to define the place where the styling is defined, which is inside the static folder of the website app.&lt;/p&gt;
+&lt;p&gt;You can see here that it has the django templating blocks. In the body tag you see the &lt;code&gt;{% block content %}{% endblock %}&lt;/code&gt;. This is where you will see the content in places that inherit from the &lt;em&gt;base.html&lt;/em&gt; file.&lt;/p&gt;
+&lt;p&gt;Next we'll modify the welcome page to inherit from the base.html file. Here is the changed welcome.html file.&lt;/p&gt;
+&lt;p&gt;website\welcome.html&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;{% extends &amp;quot;base.html&amp;quot; %}
+
+{% block title %} Welcome! {% endblock %}
+
+{% block content %}
+&amp;lt;h1&amp;gt;Hello, world!&amp;lt;/h1&amp;gt;
+&amp;lt;p&amp;gt;This is my first Django app. This is on github at &amp;lt;a href=&amp;quot;https://github.com/juanjuanzero/Learning_Django&amp;quot;&amp;gt;my repo&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;div&amp;gt;&amp;lt;a href=&amp;quot;{% url 'all_rooms' %}&amp;quot;&amp;gt;All Rooms&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;ul&amp;gt;
+    {% for meeting in meetings%}
+    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{% url 'detail' meeting.id %}&amp;quot;&amp;gt;{{meeting.title}}&amp;lt;/a&amp;gt; on {{meeting.date}} {{meeting.start_time}} at {{meeting.room.name}}&amp;lt;/li&amp;gt;
+    {%endfor%}
+&amp;lt;/ul&amp;gt;
+
+{% endblock %}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;At the very beginning of the file, there is a &lt;code&gt;{% extends &amp;quot;base.html&amp;quot; %}&lt;/code&gt;. This is what tells Django that this page, uses the base.html and extends it with what is inside the &lt;code&gt;{% block content %}{% endblock %}&lt;/code&gt; of base.html.&lt;/p&gt;
+&lt;p&gt;Here you can see that only the contents of the body tag remain in the welcome page. The contents are wrapped by &lt;code&gt;{% block content %}{% endblock %}&lt;/code&gt;. This is what tells Django what goes inside the block content.&lt;/p&gt;
+&lt;p&gt;All the other pages can extend base.html in their own way by defining what goes inside the content and title blocks. I'll go ahead and update the other pages.&lt;/p&gt;
+&lt;h2 id="is-this-even-your-final-form"&gt;Is this even your final FORM?&lt;/h2&gt;
+&lt;p&gt;A meeting application won't really be useful unless we are able to add more meetings in the future. Next we will add forms to our application so that we can add meetings.&lt;/p&gt;
+&lt;p&gt;This is a component feature of meetings so we will add it to our meetings app. We'll create a page that will hold the form, and call it new.html&lt;/p&gt;
+&lt;p&gt;templates\meetings\new.html&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;{% extends &amp;quot;base.html&amp;quot; %}
+
+{% block title %} Add a New Meeting {% endblock %}
+
+{% block content %}
+&amp;lt;h1&amp;gt;Add a New Meeting&amp;lt;/h1&amp;gt;
+&amp;lt;form&amp;gt;
+    &amp;lt;table&amp;gt;
+        {{ form }}
+    &amp;lt;/table&amp;gt;
+&amp;lt;/form&amp;gt;
+{% endblock %}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here inside the form and table tag, there is a form object being passed in. We'll talk more about that soon...&lt;/p&gt;
+&lt;p&gt;We'll add a new method to the view.py&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;from django.forms import modelform_factory
+#... more imports &amp;amp; methods
+MeetingForm = modelform_factory(Meeting, exclude=[])
+
+def new(request):
+    form = MeetingForm()
+    return render(request, &amp;quot;meetings/new.html&amp;quot;, {&amp;quot;form&amp;quot;:form})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here we are importing a MeetingForm object that is a class that gets created from the modelform_factory class. In the new method, we instatiate the MeetingForm into a class and save it into a variable called &lt;em&gt;form&lt;/em&gt;. That form is an object that gets passed into the view context which then renders input elements into the template.&lt;/p&gt;
+&lt;p&gt;We'll modify the urls.py in the meeetings app and add the url&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;urlpatterns = [
+    path('&amp;lt;int:id&amp;gt;', detail, name='detail'),
+    path('allRooms', allRooms, name='all_rooms'),
+    path('new', new, name='new')
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then we'll just add a link to the page from the welcome screen.&lt;/p&gt;
+&lt;h3 id="submitting-the-form-saving-the-data"&gt;Submitting the Form &amp;amp; Saving the Data&lt;/h3&gt;
+&lt;p&gt;You'll need to add a submit button to the form because django does not add that for you. You'll also need to add the &lt;code&gt;{% csrf_token %}&lt;/code&gt; which protects you from the cross site request forgery attacks into the form.&lt;/p&gt;
+&lt;p&gt;Here is the modified new template:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;{% extends &amp;quot;base.html&amp;quot; %}
+
+{% block title %} Add a New Meeting {% endblock %}
+
+{% block content %}
+&amp;lt;h1&amp;gt;Add a New Meeting&amp;lt;/h1&amp;gt;
+&amp;lt;form method=&amp;quot;post&amp;quot;&amp;gt;
+    &amp;lt;table&amp;gt;
+        {{ form }}
+    &amp;lt;/table&amp;gt;
+    {% csrf_token %}
+    &amp;lt;button type=&amp;quot;submit&amp;quot;&amp;gt;Add Meeting&amp;lt;/button&amp;gt;
+&amp;lt;/form&amp;gt;
+{% endblock %}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Notice how the method in the form tag says post. This will submit the form to the same url where the form was created. We'll need to modify the new method to handle post requests when users submit the form.&lt;/p&gt;
+&lt;p&gt;new method in views.py&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;def new(request):
+    if request.method == &amp;quot;POST&amp;quot;:
+        form = MeetingForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(&amp;quot;welcome&amp;quot;)
+    else:
+        form = MeetingForm()
+    return render(request, &amp;quot;meetings/new.html&amp;quot;, {&amp;quot;form&amp;quot;: form})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here we are processing requests as they are handled by the new method.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If the method is POST then we create a meeting form object from the request POST data and assign it to the form variable. If the form is valid, we save the data and redirect the user to the welcome page (using the named url)&lt;/li&gt;
+&lt;li&gt;If the method is not POST, we create an empty meeting and store it in the form variable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If it was not escaped during the submission. At the end we are taken to the new meeting page with the form variable.&lt;/p&gt;
+&lt;h2 id="adding-a-delete-method"&gt;Adding a Delete Method&lt;/h2&gt;
+&lt;p&gt;So now we are going to implement what we have learned so far and add a delete method, in case a meeting was created in error. All we'll do is add a way to delete a meeting in the detail page of the meeting. This will be a link that we click and once clicked we'll delete a meeting.&lt;/p&gt;
+&lt;p&gt;views.py&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;def delete(request, id):
+    meeting = Meeting.objects.get(pk=id)
+    if meeting:
+        meeting.delete()
+    return redirect(&amp;quot;home&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;urls.py in the meetings app&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;from django.urls import path
+from meetings.views import detail, allRooms, new, delete
+
+urlpatterns = [
+    path('&amp;lt;int:id&amp;gt;', detail, name='detail'),
+    path('allRooms', allRooms, name='all_rooms'),
+    path('new', new, name='new'),
+    path('delete', delete, name='delete')
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here is a look at the detail page with delete meeting link:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;{% extends &amp;quot;base.html&amp;quot; %}
+
+{% block title %} Detail {% endblock %}
+
+{% block content %}
+&amp;lt;h1&amp;gt;{{meeting.title}}&amp;lt;/h1&amp;gt;
+&amp;lt;a href=&amp;quot;{% url 'home' %}&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt;
+&amp;lt;p&amp;gt;
+    This meeting has been scheduled on {{meeting.date}}, at {{meeting.start_time}} in {{meeting.room}}
+&amp;lt;/p&amp;gt;
+&amp;lt;a href=&amp;quot;{% url 'delete' meeting.id %}&amp;quot;&amp;gt;Delete Meething&amp;lt;/a&amp;gt;
+{% endblock %}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="adding-an-edit-method-to-modify-the-meeting"&gt;Adding an Edit method to modify the meeting&lt;/h2&gt;
+&lt;p&gt;Next we'll go ahead and follow the same set of paths to modify a meeting.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We could use the new.html as it will be the mostly the same, but for the sake of simplicity we will just create another page for editing meetings&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;we'll create a editMeeting.html file in the meetings template app.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;{% extends &amp;quot;base.html&amp;quot; %}
+{% block title %} Edit Meeting {% endblock %}
+{% block content %}
+&amp;lt;h1&amp;gt;Edit Meeting&amp;lt;/h1&amp;gt;
+&amp;lt;form method=&amp;quot;post&amp;quot;&amp;gt;
+    &amp;lt;table&amp;gt;
+        {{ form }}
+    &amp;lt;/table&amp;gt;
+    {% csrf_token %}
+    &amp;lt;button type=&amp;quot;submit&amp;quot;&amp;gt;Update Meeting&amp;lt;/button&amp;gt;
+&amp;lt;/form&amp;gt;
+{% endblock %}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can see that it is very similar to the new.html with a few slight tweaks.&lt;/p&gt;
+&lt;p&gt;Next we'll add an edit method in the view.py&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;def editMeeting(request, id):
+    meeting = Meeting.objects.get(pk=id)
+    if request.method == &amp;quot;POST&amp;quot;:
+        form = MeetingForm(request.POST, instance=meeting)
+        if form.is_valid():
+            form.save()
+            return redirect(&amp;quot;home&amp;quot;)
+    else:
+        form = MeetingForm(instance=meeting)
+    return render(request, &amp;quot;meetings/editMeeting.html&amp;quot;, {&amp;quot;form&amp;quot;: form})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This method also looks a lot like the new method, the only difference here is in the else clause where we are trying to get a meeting to pass into the form when the request is a GET (not a POST).&lt;/p&gt;
+&lt;p&gt;Here is a link to the &lt;a href="https://docs.djangoproject.com/en/3.2/topics/forms/modelforms/#the-save-method"&gt;save method&lt;/a&gt; in the docs.&lt;/p&gt;
+&lt;p&gt;Next we'll add a url for in urls patterns list.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;from django.urls import path
+from meetings.views import detail, allRooms, new, delete, editMeeting
+urlpatterns = [
+    path('&amp;lt;int:id&amp;gt;', detail, name='detail'),
+    path('allRooms', allRooms, name='all_rooms'),
+    path('new', new, name='new'),
+    path('delete/&amp;lt;int:id&amp;gt;', delete, name='delete'),
+    path('editMeeting/&amp;lt;int:id&amp;gt;', editMeeting, name='editMeeting')
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And we'll add the link to edit the meeting in the detail page.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;{% extends &amp;quot;base.html&amp;quot; %}
+
+{% block title %} Detail {% endblock %}
+
+{% block content %}
+&amp;lt;h1&amp;gt;{{meeting.title}}&amp;lt;/h1&amp;gt;
+&amp;lt;a href=&amp;quot;{% url 'home' %}&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt;
+&amp;lt;p&amp;gt;
+    This meeting has been scheduled on {{meeting.date}}, at {{meeting.start_time}} in {{meeting.room}}
+&amp;lt;/p&amp;gt;
+&amp;lt;div&amp;gt;&amp;lt;a href=&amp;quot;{% url 'delete' meeting.id %}&amp;quot;&amp;gt;Delete Meething&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;div&amp;gt;&amp;lt;a href=&amp;quot;{% url 'editMeeting' meeting.id %}&amp;quot;&amp;gt;Edit Meething&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;
+{% endblock %}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And now we can add,edit,delete and see the details of our meetings. Nice Work!&lt;/p&gt;
+&lt;h2 id="adding-authentication"&gt;Adding Authentication&lt;/h2&gt;
+&lt;p&gt;Django out of the box offers a way to authenticate users using the site to make it more secure.We'll go ahead and add authentication to our app.&lt;/p&gt;
+&lt;p&gt;We'll go ahead and create a signup view and page so that users can signup. Here is the signup page. You can see that its taking advantage creating a &lt;code&gt;{{ form.as_p }}&lt;/code&gt; template. This comes out of the box from Django using the UserCreationForm.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;{% extends &amp;quot;base.html&amp;quot; %}
+{% block title %} Add a New Meeting {% endblock %}
+{% block content %}
+&amp;lt;h1&amp;gt;Sign Up&amp;lt;/h1&amp;gt;
+&amp;lt;form method=&amp;quot;post&amp;quot;&amp;gt;
+    &amp;lt;table&amp;gt;
+        {{ form.as_p }}
+    &amp;lt;/table&amp;gt;
+    {% csrf_token %}
+&amp;lt;/form&amp;gt;
+&amp;lt;h3&amp;gt;Already have an account?&amp;lt;/h3&amp;gt;
+&amp;lt;a href=&amp;quot;{% url 'login' %}&amp;quot;&amp;gt;Sign In Here&amp;lt;/a&amp;gt;
+{% endblock %}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As mentioned earlier the template takes advantage of form that comes out of the box from Django. In the views.py file in the website, we'll go ahead and import the following libraries for the methods we' use:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here is the signup view:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;def signup(request):
+    if request.user.is_authenticated:
+        return redirect('home')
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password1']
+            user = authenticate(username=username, password=password)
+            login(request, user)
+            return redirect('home')
+        else:
+            return render(request, 'website/signup.html', {'form': form})
+    else:
+        form = UserCreationForm()
+        return render(request, 'website/signup.html', {'form': form})
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The view first checks if the user is authenticated, if so then they are directed to the home page. If not, then we check if the method is a POST or a GET request. If it's a POST request, then we take in the user credentials by creating an instance of the UserCreationForm. Otherwise, we return a blank instance.&lt;/p&gt;
+&lt;p&gt;If the form is valid, then we save the credentials (which adds the user) then we authenticate the user by calling the authenticate() and passing the result in the login method, then we redirect to the home screen.&lt;/p&gt;
+&lt;p&gt;If the form is not valid, we take them back to the signup screen.&lt;/p&gt;
+&lt;p&gt;We'll also change the welcome view so that users will be redirected to signin if they are not authenticated.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;def welcome(request):
+    if request.user.is_authenticated:
+        mtgs = Meeting.objects.all()
+        return render(request, &amp;quot;website/welcome.html&amp;quot;, {&amp;quot;meetings&amp;quot;: mtgs})
+    else:
+        return redirect(&amp;quot;website/signin&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next we'll create the login page and logout functionality.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;def signin(request):
+    if request.user.is_authenticated:
+        return redirect('home')
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        else:
+            form = AuthenticationForm()
+            return render(request, 'website/signin.html', {'form': form})
+    else:
+        form = AuthenticationForm()
+        return render(request, 'website/signin.html', {'form': form})
+
+def signout(request):
+    logout(request)
+    return redirect('')
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The signin view functions similarly to the signup view. The only difference is that it uses a different form template. The AuthenticationForm.&lt;/p&gt;
+&lt;p&gt;Special thanks to the &lt;a href="https://www.askpython.com/django/django-user-authentication#:%7E:text=Using%20Django.contrib.auth%20Library%20for%20Using%20Authentication%201%20authenticate.,currently%20logged-in.%204%20AuthenticationForm.%20...%205%20CreateAuthenticationForm.%20"&gt;this guide&lt;/a&gt; who helped me understand Django Authentication better.&lt;/p&gt;
+&lt;h3 id="what-kind-of-authentication-does-django-offer-out-of-the-box"&gt;What kind of authentication does Django offer out of the box?&lt;/h3&gt;
+&lt;p&gt;From what I understand, Django uses Basic HTTP Authentication which is the least secure of the authentication methods. Its probably ok for testing scenarios. Please keep this in mind&lt;/p&gt;
+</content:encoded>
+			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
+		</item>
+		<item>
 			<title>Learning C++</title>
 			<link>/posts/learningcpp</link>
 			<description>Playing with C++</description>
 			<guid isPermaLink="false">/posts/learningcpp</guid>
-			<pubDate>Sat, 09 Oct 2021 13:25:25 GMT</pubDate>
+			<pubDate>Sat, 30 Oct 2021 15:55:34 GMT</pubDate>
 			<content:encoded>&lt;h1 id="learning-c"&gt;Learning C++&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://github.com/juanjuanzero/LearningCpp"&gt;The code discussed here is on github&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id="getting-started"&gt;Getting Started&lt;/h2&gt;
